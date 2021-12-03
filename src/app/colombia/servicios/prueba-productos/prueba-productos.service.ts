@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import api from "@woocommerce/woocommerce-rest-api";
+import axios from 'axios';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +30,12 @@ export class PruebaProductosService {
       version: 'wc/v3',
       queryStringAuth: true
     });
+    axios.interceptors.request.use(function (config) {
+      const { headers = {} } = config || {}
+      if (headers['User-Agent']) delete config.headers['User-Agent']
+    
+      return config
+    })
     return WooCommerce.get(`products/categories?per_page=100`);
   }
 

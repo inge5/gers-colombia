@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 import { PagesService } from '../../../services/pages.service';
 
 
@@ -17,9 +18,10 @@ export class DisenoIngenieriaComponent implements OnInit {
   texto_columna_2_data:any = {};
   public activePillIndex:number = 0;
 
-  constructor(private disenoingenieria:PagesService) { }
+  constructor(private disenoingenieria:PagesService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaDisenoIng();
     this.disenoingenieria.getDisenoIngenieria()
       .subscribe((res:any) => {
         this.loader = false;

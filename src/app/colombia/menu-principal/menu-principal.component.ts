@@ -76,7 +76,7 @@ export class MenuPrincipalComponent implements OnInit {
           }
         })
       })
-      console.log(this.categorias);
+      // console.log(this.categorias);
       this.productoS.setCategoria(this.categorias);
     })
   }

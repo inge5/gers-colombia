@@ -1,5 +1,6 @@
 import { PagesService } from '../../../services/pages.service';
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 
 @Component({
   selector: 'app-interventorias-asesorias',
@@ -11,9 +12,10 @@ export class InterventoriasAsesoriasComponent implements OnInit {
   seccion_1_data: any = {};
   seccion_iconos_data: any[] = [];
 
-  constructor(private interventoriasasesorias:PagesService) { }
+  constructor(private interventoriasasesorias:PagesService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaInterventoria();
     this.interventoriasasesorias.getInterventoriaAsesoria()
       .subscribe((res:any) => {
         this.loader = false;

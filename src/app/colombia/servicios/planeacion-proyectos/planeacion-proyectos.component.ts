@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 import { PagesService } from '../../../services/pages.service';
 
 
@@ -12,9 +13,10 @@ export class PlaneacionProyectosComponent implements OnInit {
   seccion_1_data: any = {};
   seccion_iconos_data: any[] = [];
 
-  constructor(private _planeacionproyectos:PagesService) { }
+  constructor(private _planeacionproyectos:PagesService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaPlaneacionProyectos();
     this._planeacionproyectos.getPlaneacionProyectos()
       .subscribe((res:any) => {
         this.loader = false;

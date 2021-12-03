@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import {productos} from "../../../../assets/data/json";
 import {PruebaProductosService} from "../../servicios/prueba-productos/prueba-productos.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AlertasService} from "../../servicios/alertas/alertas.service";
 import {Productos} from "../../interfaz/productos";
 import {VariableGlobalService} from "../../servicios/variable-global/variable-global.service";
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;
 @Component({
   selector: 'app-detalle-producto',
@@ -26,7 +27,7 @@ export class DetalleProductoComponent implements OnInit {
   constructor(private  productosS: PruebaProductosService,
               private ruta: Router, private activatedRoute: ActivatedRoute,
               private variableG: VariableGlobalService,
-              private alertaS: AlertasService) {
+              private alertaS: AlertasService, @Inject(PLATFORM_ID) private platformid) {
                 this.activatedRoute.params.subscribe(resp => {
             
                   this.productoUrl = resp.codigo;   
@@ -66,7 +67,7 @@ export class DetalleProductoComponent implements OnInit {
   }
 
   agregarCarrito(id: number) {
-
+if(isPlatformBrowser(this.platformid)){
     if(localStorage.getItem('carrito')){
       this.carritoTemporal = JSON.parse(localStorage.getItem('carrito'));
 
@@ -105,5 +106,6 @@ export class DetalleProductoComponent implements OnInit {
    
     }
     this.variableG.changeMessage();
+  }
   }
 }

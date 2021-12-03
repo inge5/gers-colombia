@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {VariableGlobalService} from "../servicios/variable-global/variable-global.service";
 import {AlertasService} from "../servicios/alertas/alertas.service";
 import {Router} from "@angular/router";
 import {PruebaProductosService} from "../servicios/prueba-productos/prueba-productos.service";
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { isPlatformBrowser } from '@angular/common';
 
 
 declare var $ : any; 
@@ -31,7 +32,7 @@ export class CarritoComponent implements OnInit {
     private variableG: VariableGlobalService,
     private alertaS: AlertasService,
     private pruebaS:  PruebaProductosService,
-    private ruta: Router) {
+    private ruta: Router, @Inject(PLATFORM_ID) private platformid) {
       this.filtros = {
         nombre: '',
         empresa: '',
@@ -53,6 +54,7 @@ export class CarritoComponent implements OnInit {
 
 
   quitarItem(data, co) {
+    if(isPlatformBrowser(this.platformid)){
 
     this.carrito = localStorage.getItem('carrito');
     let dataCarrito = JSON.parse(this.carrito);
@@ -68,16 +70,19 @@ export class CarritoComponent implements OnInit {
 
     this.variableG.changeMessage();
   }
+  }
 
 
   llamarDatoLocales() {
+    if(isPlatformBrowser(this.platformid)){
+
     if(localStorage.getItem('carrito')){
       this.variableG.currentMessage.subscribe(response => {
         this.carritoAnterior = response;
         this.miCarritoCompraContador();
       });
     }
-    
+    }
   }
 
   miCarritoCompraContador() {
@@ -95,7 +100,7 @@ export class CarritoComponent implements OnInit {
   }
 
   cambiarUnidades(data, identificador, proceso) {
-
+if(isPlatformBrowser(this.platformid)){
     this.aumentarDisminuir = JSON.parse(localStorage.getItem('carrito'));
 
     if (proceso === 1) {
@@ -113,10 +118,13 @@ export class CarritoComponent implements OnInit {
     localStorage.setItem('carrito', JSON.stringify(this.aumentarDisminuir));
     this.variableG.changeMessage();
   }
+  }
 
 
   borrarListado() {
+    if(isPlatformBrowser(this.platformid)){ 
     localStorage.setItem('carrito', JSON.stringify([]));
+  }
     this.alertaS.showToasterFull('Articulos removidos exitosamente');
     this.variableG.changeMessage();
     this.llamarDatoLocales();
@@ -159,6 +167,7 @@ export class CarritoComponent implements OnInit {
   }
 
   enviarForm(form) {
+    if(isPlatformBrowser(this.platformid)){
     const dataInfo = {
       productos: JSON.parse(localStorage.getItem('carrito')),
       filtros: this.filtros
@@ -170,7 +179,7 @@ export class CarritoComponent implements OnInit {
     paqueteDeDatos.append('nit', this.filtros.nit);
     paqueteDeDatos.append('correo', this.filtros.correo);
     paqueteDeDatos.append('celular', this.filtros.celular);
-
+  }
   
 
     $.ajax({

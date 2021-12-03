@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { SeoService } from '../../services/seo.service';
 import { HomeService } from '../../services/home.service';
 import { PagesService } from '../../services/pages.service';
-
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-proyectos',
@@ -14,10 +16,12 @@ export class ProyectosComponent implements OnInit {
 
   loader = true;
 
-  constructor(private _proyectosService:HomeService,private _proyectosPageService:PagesService) { }
+  constructor(private _proyectosService:HomeService,private _proyectosPageService:PagesService, private seo: SeoService, @Inject(PLATFORM_ID) private platformid, private titulo: Title) { }
 
   ngOnInit(): void {
-    this._proyectosService.getProyects()
+    this.seo.paginaProyectos();
+    if(isPlatformBrowser(this.platformid)){
+      this._proyectosService.getProyects()
       .subscribe((res:any) => {
         this.loader = false;
         this.FeaturedProyects = res;
@@ -27,6 +31,7 @@ export class ProyectosComponent implements OnInit {
         this.loader = false;
         this.titulo_pagina_data = res.acf.titulo_pagina;
       });  
+    }
   }
 
 }

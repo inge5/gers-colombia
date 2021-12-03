@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 import { PagesService } from '../../../services/pages.service';
 
 @Component({
@@ -14,9 +15,10 @@ export class PruebasAutomatizacionControlComponent implements OnInit {
   texto_columna_1_data: any = {};
   texto_columna_2_data: any = {};
 
-  constructor(private _pruebasautomatizacioncontrol:PagesService) { }
+  constructor(private _pruebasautomatizacioncontrol:PagesService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaPruebaAutomatizacion();
     this._pruebasautomatizacioncontrol.getPruebasAutomatizacionControl()
       .subscribe((res:any) => {
         this.loader = false;

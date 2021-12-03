@@ -1,6 +1,8 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { HomeService } from '../../services/home.service';
 import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
+import { SeoService } from 'src/app/services/seo.service';
+import { Title } from '@angular/platform-browser';
 
 @Pipe({ name: 'safeHtml'})
 export class SafeHtmlPipe implements PipeTransform  {
@@ -45,10 +47,11 @@ export class HomeComponent implements OnInit {
   equipoTrabajo:any[] = [];
   vacantes:any[] = [];
 
-  constructor(private _sanitizer: DomSanitizer, private _homeService:HomeService) { 
+  constructor(private _sanitizer: DomSanitizer, private _homeService:HomeService, private seo: SeoService, private titulo: Title) { 
   }
 
   ngOnInit(): void {
+    this.seo.paginaInicio();
     this._homeService.getHome()
       .subscribe((res:any) => {
         this.loader = false;
@@ -56,8 +59,6 @@ export class HomeComponent implements OnInit {
         this.sliderprincipal_data = this.sliderprincipal_data.changingThisBreaksApplicationSecurity;
 
         this.ejecucion_de_monitoreo_data = res.acf.ejecucion_de_monitoreo; 
-        //this.ejecucion_de_monitoreo_data = this._sanitizer.bypassSecurityTrustHtml(res);
-        //this.ejecucion_de_monitoreo_data = this.ejecucion_de_monitoreo_data.changingThisBreaksApplicationSecurity;
 
         this.generando_soluciones_data = res.acf.generando_soluciones;
         this.proyectos_realizados_data = res.acf.proyectos_realizados; 

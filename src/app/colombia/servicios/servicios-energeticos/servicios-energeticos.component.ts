@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 import { PagesService } from '../../../services/pages.service';
 
 @Component({
@@ -12,9 +13,10 @@ export class ServiciosEnergeticosComponent implements OnInit {
   seccion_iconos_data: any[] = [];
   texto_final_data: any = {};
 
-  constructor(private _serviciosenergeticos:PagesService) { }
+  constructor(private _serviciosenergeticos:PagesService, private seo: SeoService) { }
 
   ngOnInit(): void {
+    this.seo.paginaServiciosEnergeticos();
     this._serviciosenergeticos.getServiciosEnergeticos()
       .subscribe((res:any) => {
         this.loader = false;
