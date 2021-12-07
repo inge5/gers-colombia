@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PruebaProductosService } from '../../servicios/prueba-productos/prueba-productos.service';
 import Swal from 'sweetalert2';
 import { PagesService } from 'src/app/services/pages.service';
+import { environment } from 'src/environments/environment';
 declare var $: any;
 
 @Component({
@@ -16,7 +17,7 @@ export class FormDemostracionComponent implements OnInit {
   @Input() tipoProducto: any;
   nombreProducto
   formDemostracion: FormGroup;
-  urlDestino: string = "https://gers.com.co/backend/wp-content/themes/gers/formulario-demostracion/form-demostracion.php";
+  urlDestino: string = `${environment.domain}/wp-content/themes/gers/formulario-demostracion/form-demostracion.php`;
 
   constructor(private fb: FormBuilder, private productoS: PruebaProductosService, private _neplan:PagesService) { }
 

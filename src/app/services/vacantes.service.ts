@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { GLOBAL } from './global';
 import { map, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class VacantesService {
   public url: string;
 
   constructor(private _http: HttpClient, private _router:Router) {
-    this.url = GLOBAL.url;
+    this.url = environment.url;
    }
 
   getVacantes(): Observable<any>{

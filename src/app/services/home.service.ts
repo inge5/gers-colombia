@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GLOBAL } from './global';
+import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -8,8 +8,8 @@ export class HomeService {
   public base: string;
   public url: string;
   constructor(public _http: HttpClient){
-      this.base = GLOBAL.base;
-      this.url = GLOBAL.url;
+      this.base = environment.base;
+      this.url = environment.url;
   }
 
   getHome(): Observable<any>{

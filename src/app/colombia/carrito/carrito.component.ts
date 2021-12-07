@@ -6,6 +6,7 @@ import {PruebaProductosService} from "../servicios/prueba-productos/prueba-produ
 
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { isPlatformBrowser } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 
 declare var $ : any; 
@@ -183,7 +184,7 @@ if(isPlatformBrowser(this.platformid)){
   
 
     $.ajax({
-      url: 'https://gers.com.co/backend/wp-content/themes/gers/formulario-solicitar-cotizacion/form-cotizacion.php',
+      url: `${environment.domain}/wp-content/themes/gers/formulario-solicitar-cotizacion/form-cotizacion.php`,
       type: 'POST',
       data: paqueteDeDatos,
       contentType: false,

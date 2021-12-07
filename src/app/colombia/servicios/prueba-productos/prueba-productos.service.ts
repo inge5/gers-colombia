@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import api from "@woocommerce/woocommerce-rest-api";
 import axios from 'axios';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class PruebaProductosService {
 
-  url = 'https://gers.com.co/backend';
+  url = environment.domain;
 
   por_page: number;
   categoria: any[] = [];

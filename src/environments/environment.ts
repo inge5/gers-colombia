@@ -4,6 +4,12 @@
 
 export const environment = {
   production: false,
+  auth: 'http://localhost/gers-wordpress/wp-json/jwt-auth/v1/token',
+  base: 'http://localhost/gers-wordpress/wp-json/acf/v3',
+  url:  'http://localhost/gers-wordpress/wp-json/wp/v2',
+  menu: 'http://localhost/gers-wordpress/wp-json/menus/v1',
+  domain: 'http://localhost/gers-wordpress',
+  
 };
 
 /*

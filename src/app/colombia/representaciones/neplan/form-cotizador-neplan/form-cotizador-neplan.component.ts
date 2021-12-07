@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Neplan } from '../../../../interfaces/neplan';
 import { Cotizador } from '../../../../interfaces/cotizador';
+import { environment } from 'src/environments/environment';
 declare var $: any;
 
 @Component({
@@ -50,7 +51,7 @@ export class FormCotizadorNeplanComponent implements OnInit {
     paqueteDeDatos.append('celular', this.filtros.celular);
 
     $.ajax({
-      url: 'https://gers.com.co/backend/wp-content/themes/gers/formulario-cotizador-neplan-colombia/form-cotizador-neplan-colombia.php',
+      url: `${environment.domain}/wp-content/themes/gers/formulario-cotizador-neplan-colombia/form-cotizador-neplan-colombia.php`,
       type: 'POST',
       data: paqueteDeDatos,
       contentType: false,

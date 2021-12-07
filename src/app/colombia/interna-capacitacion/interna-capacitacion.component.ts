@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import { CapacitacionesService } from 'src/app/services/capacitaciones.service';
 import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 declare var $: any;
 
 @Component({
@@ -63,7 +64,7 @@ export class InternaCapacitacionComponent implements OnInit {
   formTrabajeNosotros(form){
     this.usuario.capacitacion = this.capacitacion.title.rendered;
     $.ajax({
-      url: 'https://gers.com.co/backend/wp-content/themes/gers/inscripcion.php',
+      url: `${environment.domain}/wp-content/themes/gers/inscripcion.php`,
       type: 'POST',
       data: JSON.stringify(this.usuario),
       dataType:"json",
