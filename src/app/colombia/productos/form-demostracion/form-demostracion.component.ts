@@ -23,9 +23,6 @@ export class FormDemostracionComponent implements OnInit {
 
   ngOnInit(): void {
     this.crearFormulario();
-    // setTimeout(() => {
-    //   this.formDemostracion.controls['tipo_producto'].setValue(this.producto)
-    // }, 3000);
     if(this.tipoProducto === 'Productos'){
       this.traerProducto();
     }else{
@@ -106,7 +103,6 @@ export class FormDemostracionComponent implements OnInit {
     $('#demostracion').addClass('cerrar-formulario');
   }
   enviarFormulario(){
-    
     if(this.formDemostracion.invalid && !this.formDemostracion.get('acepto').value){
       return Object.values( this.formDemostracion.controls ).forEach(control => {
         control.markAsTouched();
@@ -160,6 +156,11 @@ export class FormDemostracionComponent implements OnInit {
       }
     });
     this.formDemostracion.reset();
+    if(this.tipoProducto === 'Productos'){
+      this.traerProducto();
+    }else{
+      this.traerNeplan();
+    }
   }
 
 }
