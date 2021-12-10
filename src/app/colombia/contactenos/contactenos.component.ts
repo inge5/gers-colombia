@@ -66,6 +66,7 @@ export class ContactenosComponent implements OnInit {
           }); 
         
         form.reset();
+        this.user.pais = 'Colombia';
         } else {
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
         }

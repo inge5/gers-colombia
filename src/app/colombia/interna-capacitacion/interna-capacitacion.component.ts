@@ -80,6 +80,7 @@ export class InternaCapacitacionComponent implements OnInit {
           }); 
       
         form.reset();
+        this.usuario.pais = 'Colombia';
         } else {
           Swal.fire('Oops...', 'Algo pasó. Corrige los errores, por favor!', 'error')
         }
