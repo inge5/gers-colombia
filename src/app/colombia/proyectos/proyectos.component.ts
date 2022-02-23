@@ -8,30 +8,40 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
-  styleUrls: ['./proyectos.component.css']
+  styleUrls: ['./proyectos.component.css'],
 })
 export class ProyectosComponent implements OnInit {
-  FeaturedProyects:any[] = [];
+  FeaturedProyects: any[] = [];
   titulo_pagina_data: any;
 
   loader = true;
 
-  constructor(private _proyectosService:HomeService,private _proyectosPageService:PagesService, private seo: SeoService, @Inject(PLATFORM_ID) private platformid, private titulo: Title) { }
+  constructor(
+    private _proyectosService: HomeService,
+    private _proyectosPageService: PagesService,
+    private seo: SeoService,
+    @Inject(PLATFORM_ID) private platformid,
+    private titulo: Title
+  ) {}
 
   ngOnInit(): void {
-    this.seo.paginaProyectos();
-    if(isPlatformBrowser(this.platformid)){
-      this._proyectosService.getProyects()
-      .subscribe((res:any) => {
+    this._proyectosPageService.getProyectosSeo().subscribe((resp: any) => {
+      this.seo.paginaMetaData(
+        resp.acf.titulo_seo,
+        resp.acf.descripcion_seo,
+        resp.acf.keywords_seo,
+        resp.acf.image_seo
+      );
+    });
+    if (isPlatformBrowser(this.platformid)) {
+      this._proyectosService.getProyects().subscribe((res: any) => {
         this.loader = false;
         this.FeaturedProyects = res;
-      });  
-      this._proyectosPageService.getProyectosPage()
-      .subscribe((res:any) => {
+      });
+      this._proyectosPageService.getProyectosPage().subscribe((res: any) => {
         this.loader = false;
         this.titulo_pagina_data = res.acf.titulo_pagina;
-      });  
+      });
     }
   }
-
 }

@@ -7,16 +7,19 @@ import { Observable } from 'rxjs';
 export class HomeService {
   public base: string;
   public url: string;
-  constructor(public _http: HttpClient){
-      this.base = environment.base;
-      this.url = environment.url;
+  constructor(public _http: HttpClient) {
+    this.base = environment.base;
+    this.url = environment.url;
   }
 
-  getHome(): Observable<any>{
+  getHome(): Observable<any> {
     return this._http.get(`${this.base}/pages/2/`);
   }
 
-  getProyects(): Observable<any>{
+  getProyects(): Observable<any> {
     return this._http.get(`${this.url}/proyectos?per_page=40`);
+  }
+  getSeoHome() {
+    return this._http.get(`${this.url}/seo/1223`);
   }
 }
