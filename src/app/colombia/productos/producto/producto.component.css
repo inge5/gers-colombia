@@ -1,65 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 :host {
-  background-image: linear-gradient(230.37deg, rgba(98, 100, 22, 0) 0%, #9B9D31 100%);
-  filter: blur(35px);
+  background-image: linear-gradient(
+    230.37deg,
+    rgba(98, 100, 22, 0) 0%,
+    #9b9d31 100%
+  );
+
   opacity: 0.8676292782738095;
 }
 .filtros-izquierda {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 6px;
   /* box-shadow: 2px 1px 6px 0 rgba(0, 0, 0, 0.2); */
   margin-bottom: 15px;
   margin-top: 15px;
 }
-.filtros-izquierda .btn-link{
+.filtros-izquierda .btn-link {
   padding: 0;
 }
-.subCategorias{
+.subCategorias {
   display: none !important;
 }
-.subsubCategorias{
+.subsubCategorias {
   display: none !important;
 }
 
-.contenedor-relativo:hover .mostrar-btn{
+.contenedor-relativo:hover .mostrar-btn {
   display: block !important;
 }
-.btn-blue{
+.btn-blue {
   color: #fff;
-  background-color: #2C3394;
+  background-color: #2c3394;
   border: 1px solid transparent;
 }
-.btn-blue:hover{
+.btn-blue:hover {
   background-color: #fff;
-  color: #2C3394;
-  border: 1px solid #2C3394;
+  color: #2c3394;
+  border: 1px solid #2c3394;
 }
-.contenedor-relativo:hover .filtros-derecha{
-  background-color: #FFFFFF;
+.contenedor-relativo:hover .filtros-derecha {
+  background-color: #ffffff;
   border-radius: 6px;
-  border: #2C3394 solid 1px;
+  border: #2c3394 solid 1px;
   filter: blur(1.5px);
 }
-.filtros-derecha:hover{
+.filtros-derecha:hover {
   cursor: pointer;
 }
-.sombreado-subCate{
+.sombreado-subCate {
   background-color: #f1f1f1;
   width: 122%;
   padding: 1%;
   font-size: 14px;
 }
-.sombreado-subsubCate{
+.sombreado-subsubCate {
   background-color: rgb(210 210 210);
   width: 122%;
   padding: 1%;
   font-size: 14px;
 }
 .row-check {
-
   margin-bottom: 15px;
 }
-
 
 .filtros-izquierda .row {
   display: -ms-flexbox;
@@ -71,17 +73,15 @@
 }
 
 .filtros-izquierda h3 {
-  color: #1C1C1C;
-  font-family: 'Source Sans Pro', sans-serif;
+  color: #1c1c1c;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   letter-spacing: -0.16px;
   line-height: 26px;
   margin: 15px;
-
 }
 
 .opcion-filtros-superior {
-
   margin-bottom: 30px;
 }
 
@@ -89,28 +89,27 @@
   height: 150px;
   margin-bottom: 15px;
   margin-top: 15px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 6px;
   box-shadow: 2px 1px 6px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   text-align: center;
   align-items: center;
-  
 }
-.contenedor-relativo{
+.contenedor-relativo {
   position: relative;
 }
-.btn-absoluto{
+.btn-absoluto {
   position: absolute;
   top: 40%;
   right: 30%;
 }
-.btn-absoluto-vista2{
+.btn-absoluto-vista2 {
   position: absolute;
   top: 40%;
   right: 35%;
 }
-.btn-absoluto-vista3{
+.btn-absoluto-vista3 {
   position: absolute;
   top: 40%;
   right: 35%;
@@ -142,8 +141,8 @@
   flex-wrap: wrap;
   margin-right: -13px !important;
   margin-left: -1px !important;
-  color: #2C3394;
-  font-family: 'Montserrat', sans-serif;
+  color: #2c3394;
+  font-family: "Montserrat", sans-serif;
   line-height: 17px;
   letter-spacing: 0.84px;
   width: 226px;
@@ -151,15 +150,15 @@
   font-weight: 700;
   cursor: pointer;
 }
-.contenedor-descripcion{
+.contenedor-descripcion {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -13px !important;
   margin-left: -1px !important;
-  color: #2C3394;
-  font-family: 'Montserrat', sans-serif;
+  color: #2c3394;
+  font-family: "Montserrat", sans-serif;
   line-height: 17px;
   letter-spacing: 0.84px;
   text-align: left;
@@ -180,7 +179,7 @@
   align-items: center;
 }
 
-.vistas-iconos{
+.vistas-iconos {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -192,15 +191,13 @@
 }
 
 .filtros-derecha-forma3 img {
-
   width: 300px;
-
 }
 .campos-filtros-productos .col-12 {
   margin-bottom: 10px;
   margin: 10px 0;
 }
-.pagination{
+.pagination {
   margin: 0 !important;
   align-items: center;
 }
@@ -212,15 +209,15 @@
 }
 .page-item.active .page-link {
   color: #fff;
-  background-color: #2C3394 !important;
-  border-color: #2C3394 !important;
+  background-color: #2c3394 !important;
+  border-color: #2c3394 !important;
 }
 
 .page-link:hover {
   color: #ffffff !important;
-  background-color: #2C3394 !important;
-  border-color: #2C3394 !important;
+  background-color: #2c3394 !important;
+  border-color: #2c3394 !important;
 }
-.page-item{
+.page-item {
   cursor: pointer;
 }
