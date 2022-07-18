@@ -2,39 +2,88 @@
 <app-topbar-azul></app-topbar-azul>
 <app-menu-principal></app-menu-principal> -->
 <div class="politica-gestion">
+  <div class="container">
+    <div class="row pb-5 seccion-1">
+      <div class="col-sm-6 pt-5">
+        <ngx-skeleton-loader
+          count="1"
+          *ngIf="loader"
+          animation="progress"
+          [theme]="{ height: '40px', width: '270px' }"
+        ></ngx-skeleton-loader>
+        <ngx-skeleton-loader
+          count="5"
+          *ngIf="loader"
+          animation="progress"
+          [theme]="{ height: '20px' }"
+        ></ngx-skeleton-loader>
+        <div *ngIf="!loader">
+          <h4 class="mb-4 text-blue1 font-weight-bold size22 w-35">
+            {{ seccion_1_data.titulo }}
+          </h4>
+          <p
+            class="roboto size16 justify"
+            [innerHTML]="seccion_1_data.texto_general"
+          ></p>
+          <a
+            href="https://gers.com.co/backend/wp-content/uploads/2022/06/POLITICA-DE-PROTECCION-DE-DATOS-PERSONALES-2022-1.pdf"
+            target="_blank"
+            class="btn btn-blue font-weight-light size13 pt-2 pb-2 my-5"
+            ><h6>
+              <i class="fas fa-file-pdf"></i> Política de proteccion de datos
+            </h6></a
+          >
+        </div>
+      </div>
+      <div class="col-sm-6 pt-5">
+        <ngx-skeleton-loader
+          count="1"
+          *ngIf="loader"
+          animation="progress"
+          [theme]="{ height: '220px' }"
+        ></ngx-skeleton-loader>
+        <div *ngIf="!loader">
+          <img
+            *ngIf="seccion_1_data.imagen"
+            class="img-fluid mx-auto d-block mb-3 mt-2"
+            src="{{ seccion_1_data.imagen }}"
+            alt="Políticas"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="politicas-gers bg-gray-light pt-5 pb-5">
     <div class="container">
-        <div class="row pb-5 seccion-1">
-            <div class="col-sm-6 pt-5">
-                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px', width:'270px' }"></ngx-skeleton-loader>
-                <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
-                <div *ngIf="!loader">
-                    <h4 class="mb-4 text-blue1 font-weight-bold size22 w-35">{{ seccion_1_data.titulo }}</h4>
-                    <p class="roboto size16" [innerHTML]="seccion_1_data.texto_general"></p>
-                </div>
-            </div>
-            <div class="col-sm-6 pt-5">
-                <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'220px' }"></ngx-skeleton-loader>
-                <div *ngIf="!loader">
-                    <img *ngIf="seccion_1_data.imagen" class="img-fluid mx-auto d-block mb-3 mt-2" src="{{ seccion_1_data.imagen }}" alt="Políticas">
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <ngx-skeleton-loader
+            count="1"
+            *ngIf="loader"
+            animation="progress"
+            [theme]="{ height: '40px', width: '270px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            count="5"
+            *ngIf="loader"
+            animation="progress"
+            [theme]="{ height: '20px' }"
+          ></ngx-skeleton-loader>
+          <div *ngIf="!loader">
+            <h4 class="mb-4 text-blue1 font-weight-bold size22">
+              {{ seccion_2_data.titulo }}
+            </h4>
+            <p class="justify" [innerHTML]="seccion_2_data.texto_general"></p>
+            <p
+              *ngIf="seccion_2_data.texto_final"
+              class="text-blue1 font-weight-300 justify"
+            >
+              {{ seccion_2_data.texto_final }}
+            </p>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="politicas-gers bg-gray-light pt-5 pb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <ngx-skeleton-loader count="1" *ngIf="loader" animation="progress" [theme]="{height:'40px', width:'270px' }"></ngx-skeleton-loader>
-                    <ngx-skeleton-loader count="5" *ngIf="loader" animation="progress" [theme]="{height:'20px' }"></ngx-skeleton-loader>
-                    <div *ngIf="!loader">
-                        <h4 class="mb-4 text-blue1 font-weight-bold size22">{{ seccion_2_data.titulo }}</h4>
-                        <p [innerHTML]="seccion_2_data.texto_general"></p>
-                        <p *ngIf="seccion_2_data.texto_final" class="text-blue1 font-weight-300">{{seccion_2_data.texto_final}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
 <!-- <app-footer></app-footer> -->
