@@ -24,72 +24,95 @@ import { TrabajeConNosotrosComponent } from './colombia/trabaje-con-nosotros/tra
 import { VacanteInternaComponent } from './colombia/vacante-interna/vacante-interna.component';
 import { PublicacionesComponent } from './colombia/publicaciones/publicaciones.component';
 import { PublicacionInternaComponent } from './colombia/publicaciones/publicacion-interna/publicacion-interna.component';
-import { DetalleProductoComponent } from "./colombia/productos/detalle-producto/detalle-producto.component";
-import { ProductoComponent } from "./colombia/productos/producto/producto.component";
+import { DetalleProductoComponent } from './colombia/productos/detalle-producto/detalle-producto.component';
+import { ProductoComponent } from './colombia/productos/producto/producto.component';
 import { CapacitacionComponent } from './colombia/capacitacion/capacitacion.component';
 import { InternaCapacitacionComponent } from './colombia/interna-capacitacion/interna-capacitacion.component';
 import { BuscadorComponent } from './colombia/buscador/buscador.component';
 import { GossenMetrawattComponent } from './colombia/representaciones/gossen-metrawatt/gossen-metrawatt.component';
 
-
 let APP_ROUTES: Routes = [];
 
-    APP_ROUTES = [
-        {
-            path: '', component: ColombiaComponent,
-            children: [
-                { path: '', component: HomeComponent },
-                { path: 'neplan', component: NeplanComponent },
-                { path: 'beckwith-electric', component: BeckwithElectronicComponent },
-                { path: 'xgslab', component: XgslabComponent },
-                { path: 'dranetz', component: DranetzComponent },
-                { path: 'ndb', component: NdbComponent },
-                { path: 'capacitaciones', component: CapacitacionComponent },
-                { path: 'capacitaciones/:id', component: InternaCapacitacionComponent },
-                { path: 'proyectos', component: ProyectosComponent },
-                { path: 'productos', component: ProductoComponent },
-                { path: 'detalle-productos/:codigo/:nombre', component: DetalleProductoComponent },
-                { path: 'estudios-de-sistemas-electricos', component: EstudiosSistemasComponent },
-                { path: 'smart-grids', component: SmartGridsComponent },
-                { path: 'diseno-e-ingenieria', component: DisenoIngenieriaComponent },
-                { path: 'servicios-energeticos', component: ServiciosEnergeticosComponent },
-                { path: 'interventoria-y-asesoria', component: InterventoriasAsesoriasComponent },
-                { path: 'planeacion-de-proyectos', component: PlaneacionProyectosComponent },
-                { path: 'contactenos', component: ContactenosComponent },
-                { path: 'pensamiento-corporativo', component: PensamientoCorporativoComponent },
-                { path: 'politica-gestion-integral', component: PoliticaGestionIntegralComponent },
-                { path: 'acuerdos-internacionales', component: AcuerdosInternacionalesComponent },
-                { path: 'trabaje-con-nosotros', component: TrabajeConNosotrosComponent },
-                { path: 'vacante-interna', component: VacanteInternaComponent },
-                { path: 'vacantes/:slug', component: VacanteInternaComponent },
-                { path: 'publicaciones', component: PublicacionesComponent },
-                { path: 'publicaciones/:slug', component: PublicacionInternaComponent },
-                { path: 'pruebas-automatizacion-y-control', component: PruebasAutomatizacionControlComponent },
-                { path: 'buscador', component: BuscadorComponent },
-                { path: 'gossen-metrawatt', component: GossenMetrawattComponent },
-                { path: '**', redirectTo: '', pathMatch: 'full' }
-            ]
-        },
-    ]
-
- 
-
+APP_ROUTES = [
+  {
+    path: '',
+    component: ColombiaComponent,
+    children: [
+      { path: '', component: HomeComponent },
+      { path: 'neplan', component: NeplanComponent },
+      { path: 'beckwith-electric', component: BeckwithElectronicComponent },
+      { path: 'xgslab', component: XgslabComponent },
+      { path: 'dranetz', component: DranetzComponent },
+      { path: 'ndb', component: NdbComponent },
+      { path: 'capacitaciones', component: CapacitacionComponent },
+      { path: 'capacitaciones/:id', component: InternaCapacitacionComponent },
+      { path: 'proyectos', component: ProyectosComponent },
+      { path: 'productos', component: ProductoComponent },
+      {
+        path: 'detalle-productos/:codigo/:nombre',
+        component: DetalleProductoComponent,
+      },
+      {
+        path: 'estudios-de-sistemas-electricos',
+        component: EstudiosSistemasComponent,
+      },
+      { path: 'smart-grids', component: SmartGridsComponent },
+      { path: 'diseno-e-ingenieria', component: DisenoIngenieriaComponent },
+      {
+        path: 'servicios-energeticos',
+        component: ServiciosEnergeticosComponent,
+      },
+      {
+        path: 'interventoria-y-asesoria',
+        component: InterventoriasAsesoriasComponent,
+      },
+      {
+        path: 'planeacion-de-proyectos',
+        component: PlaneacionProyectosComponent,
+      },
+      { path: 'contactenos', component: ContactenosComponent },
+      {
+        path: 'pensamiento-corporativo',
+        component: PensamientoCorporativoComponent,
+      },
+      {
+        path: 'politica-gestion-integral',
+        component: PoliticaGestionIntegralComponent,
+      },
+      {
+        path: 'acuerdos-internacionales',
+        component: AcuerdosInternacionalesComponent,
+      },
+      { path: 'trabaje-con-nosotros', component: TrabajeConNosotrosComponent },
+      { path: 'vacante-interna', component: VacanteInternaComponent },
+      { path: 'vacantes/:slug', component: VacanteInternaComponent },
+      { path: 'publicaciones', component: PublicacionesComponent },
+      { path: 'publicaciones/:slug', component: PublicacionInternaComponent },
+      {
+        path: 'pruebas-automatizacion-y-control',
+        component: PruebasAutomatizacionControlComponent,
+      },
+      { path: 'buscador', component: BuscadorComponent },
+      { path: 'gossen-metrawatt', component: GossenMetrawattComponent },
+      { path: '**', redirectTo: '', pathMatch: 'full' },
+    ],
+  },
+];
 
 @NgModule({
-    declarations: [],
-    imports: [
-        RouterModule.forRoot(APP_ROUTES, {
-            useHash: true,
-            onSameUrlNavigation: "ignore",
-            anchorScrolling: 'enabled',
-            scrollPositionRestoration: 'enabled',
-            initialNavigation: 'enabled'})
-    ],
-    exports: []
-
+  declarations: [],
+  imports: [
+    RouterModule.forRoot(APP_ROUTES, {
+      useHash: false,
+      onSameUrlNavigation: 'ignore',
+      anchorScrolling: 'enabled',
+      scrollPositionRestoration: 'enabled',
+      initialNavigation: 'enabled',
+    }),
+  ],
+  exports: [],
 })
-
-export class AppRoutingModule{ }
+export class AppRoutingModule {}
 
 // export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {
 //     useHash: true,
