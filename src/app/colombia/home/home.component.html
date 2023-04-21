@@ -53,12 +53,12 @@
                     />
                     <p
                       class="line-height40 mb-0 ml-2 font-weight-bold titulo-banner align-items-center d-flex my-auto"
-                      [innerHTML]="home.titulo | safeHtml: 'html'"
+                      [innerHTML]="home.titulo | safeHtml : 'html'"
                     ></p>
                   </div>
                   <h3
                     class="m-0 font-weight-light descripcion-banner mb-2"
-                    [innerHTML]="home.descripcion | safeHtml: 'html'"
+                    [innerHTML]="home.descripcion | safeHtml : 'html'"
                   ></h3>
                   <p class="d-block" *ngIf="home.url_del_boton">
                     <a
@@ -415,7 +415,7 @@
     <div class="row" *ngIf="!loader">
       <ng-container
         *ngFor="
-          let proyects of FeaturedProyects | slice: 0:4;
+          let proyects of FeaturedProyects | slice : 0 : 4;
           first as isFirst;
           index as i
         "
@@ -645,13 +645,18 @@
         <div class="row">
           <div class="col-md-6"></div>
           <div
-            class="col-md-4 offset-md-1 d-flex align-items-center"
+            class="col-md-4 offset-md-1 d-flex flex-column align-items-center justify-content-center"
             style="height: 400px"
           >
             <p
               class="texto-franja-azul size22 font-weight-300 montserrat pt-5"
               [innerHTML]="equipo.descripcion"
             ></p>
+            <a
+              class="btn border-primary mt-2 mb-4 text-blue1 btn-outline-azulOscuro"
+              [routerLink]="['/pensamiento-corporativo']"
+              >¡Conocenos!</a
+            >
           </div>
         </div>
       </div>
@@ -666,46 +671,3 @@
     </div>
   </section>
 </ng-container>
-
-<!-- <ngx-skeleton-loader
-  count="1"
-  *ngIf="loader"
-  animation="progress"
-  [theme]="{ height: '350px' }"
-></ngx-skeleton-loader>
-<ng-container
-  *ngFor="let vacante_content of vacantes; first as isFirst; index as i"
->
-  <section *ngIf="!loader" class="seccionColombia13">
-    <div class="container seccion-hv mt-5">
-      <div class="row">
-        <div class="col-md-7">
-          <div class="full-textoshv">
-            <p class="tituloHojadeVida m-0">{{ vacante_content.titulo }}</p>
-            <p
-              class="textoHojadeVida"
-              [innerHTML]="vacante_content.descripcion"
-            ></p>
-            <a
-              class="linkHoja d-block mt-3"
-              href="{{ vacante_content.url_boton }}"
-              >{{ vacante_content.texto_boton }}
-              <i
-                class="fas fa-long-arrow-alt-right ml-2"
-                style="vertical-align: -0.25em"
-              ></i
-            ></a>
-          </div>
-        </div>
-        <div class="col-md-5">
-          <img
-            id="imagenHV"
-            src="{{ vacante_content.imagen }}"
-            alt="HV"
-            width="100%"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-</ng-container> -->
