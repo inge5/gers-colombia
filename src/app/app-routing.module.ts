@@ -30,6 +30,7 @@ import { CapacitacionComponent } from './colombia/capacitacion/capacitacion.comp
 import { InternaCapacitacionComponent } from './colombia/interna-capacitacion/interna-capacitacion.component';
 import { BuscadorComponent } from './colombia/buscador/buscador.component';
 import { GossenMetrawattComponent } from './colombia/representaciones/gossen-metrawatt/gossen-metrawatt.component';
+import { LineaEticaComponent } from './colombia/linea-etica/linea-etica.component';
 
 let APP_ROUTES: Routes = [];
 
@@ -94,6 +95,10 @@ APP_ROUTES = [
       },
       { path: 'buscador', component: BuscadorComponent },
       { path: 'gossen-metrawatt', component: GossenMetrawattComponent },
+      {
+        path: 'linea-etica',
+        component: LineaEticaComponent,
+      },
       { path: '**', redirectTo: '', pathMatch: 'full' },
     ],
   },

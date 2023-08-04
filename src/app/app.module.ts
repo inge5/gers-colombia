@@ -82,6 +82,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { FormDemostracionComponent } from './colombia/productos/form-demostracion/form-demostracion.component';
 import { FormCotizadorNeplanComponent } from './colombia/representaciones/neplan/form-cotizador-neplan/form-cotizador-neplan.component';
 import { GossenMetrawattComponent } from './colombia/representaciones/gossen-metrawatt/gossen-metrawatt.component';
+import { LineaEticaComponent } from './colombia/linea-etica/linea-etica.component';
 registerLocaleData(es);
 
 @NgModule({
@@ -131,6 +132,7 @@ registerLocaleData(es);
     FormDemostracionComponent,
     FormCotizadorNeplanComponent,
     GossenMetrawattComponent,
+    LineaEticaComponent,
   ],
   imports: [
     FormsModule,
