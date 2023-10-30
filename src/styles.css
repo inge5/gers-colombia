@@ -192,6 +192,9 @@ p {
 .text-blue3 {
   color: #1f98dc;
 }
+.text-blue4 {
+  color: #0089ff !important;
+}
 
 .text-gray1 {
   color: #d0d1e7;
@@ -365,13 +368,13 @@ input[type="number"]::-webkit-outer-spin-button {
 .btn-outline2 {
   border: 1px solid #0089ff;
   border-radius: 0px !important;
-  color: #0089ff;
+  color: #0089ff !important;
   background: transparent;
   transition: 0.5s !important;
 }
 .btn-outline2:hover {
   background: #0089ff;
-  color: #fff;
+  color: #fff !important;
 }
 .btn-outline:hover {
   background: #2c3394;
@@ -379,7 +382,7 @@ input[type="number"]::-webkit-outer-spin-button {
   border-color: #2c3394;
 }
 .btn {
-  transition: 0.5s;
+  transition: 0.5s !important;
 }
 .btn-white {
   background: #fff;
