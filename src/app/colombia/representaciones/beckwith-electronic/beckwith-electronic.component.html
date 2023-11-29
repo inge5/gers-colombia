@@ -128,13 +128,15 @@
               class="text-justify"
               [innerHTML]="datos.texto_general | safeHtml : 'html'"
             ></p>
-            <img
-              *ngIf="datos.imagen"
-              width="300"
-              src="{{ datos.imagen }}"
-              [alt]="datos.titulo"
-              class="img-fluid box-shadow"
-            />
+            <div class="text-center">
+              <img
+                *ngIf="datos.imagen"
+                width="250"
+                src="{{ datos.imagen }}"
+                [alt]="datos.titulo"
+                class="img-fluid box-shadow"
+              />
+            </div>
           </div>
         </ng-container>
       </div>

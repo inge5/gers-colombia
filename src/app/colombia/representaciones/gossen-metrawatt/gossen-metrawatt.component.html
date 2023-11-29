@@ -140,7 +140,7 @@
             [attr.id]="'#' + 'v-pills-' + index"
             role="tabpanel"
           >
-            <p class="text-blue4">{{ datos.archivo_titulo }}</p>
+            <p style="font-weight: bold">{{ datos.archivo_titulo }}</p>
             <p
               class="text-justify"
               [innerHTML]="datos.texto_general | safeHtml : 'html'"
