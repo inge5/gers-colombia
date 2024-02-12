@@ -1,5 +1,85 @@
-<div class="p-5">
-  <h1 class="text-primary text-center">Línea ética</h1>
-  <br />
-  <h2 class="text-primary text-center">Línea ética en construcción</h2>
+<div class="container">
+  <div class="d-flex flex-wrap">
+    <div class="w-50 px-4">
+      <h1 class="text-blue1 fw-bold my-3">Línea ética</h1>
+      <p class="text-justify">
+        Aquí puede reportar casos de violación al código de conducta, principios
+        y/o políticas de GERS S.A.S, maltrato laboral, comportamientos
+        inconsistentes con los valores corporativos y todo hecho irregular que
+        afecte a la empresa y su público de interés; así mismo temas
+        concernientes al Programa de Transparencia y Ética Empresarial (PTEE) y
+        al Sistema de Auto Gestión del Riesgo Integral de Lavado de Activos y la
+        Financiación del Terrorismo (SAGRILAFT).
+      </p>
+      <p class="mt-3 text-justify">
+        Este formulario es anónimo y la información reportada se maneja con
+        total confidencialidad.
+      </p>
+    </div>
+    <div class="w-50 py-3">
+      <form class="contactenos pb-4">
+        <div class="form-row form-group pt-2 pb-2 mb-0">
+          <label
+            class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500"
+            for="rol"
+            >¿Cuál es el rol que lo/la relaciona con GERS S.A.S?</label
+          >
+          <select class="form-control tipo-servicio" id="rol">
+            <option value="Colaborador">Colaborador</option>
+            <option value="Cliente">Cliente</option>
+            <option value="Proveedor">Proveedor</option>
+            <option value="Entidad gubernamental">Entidad gubernamental</option>
+            <option value="Miembro de comunidad">Miembro de comunidad</option>
+            <option value="Otro">Otro</option>
+          </select>
+
+          <!-- <small style="color: #c30000">
+            El Servicio es un campo requerido.
+          </small> -->
+        </div>
+        <div class="form-row form-group pt-2 pb-2 mb-0">
+          <label
+            class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500"
+            for="lugar"
+            >Desde donde nos escribes</label
+          >
+          <select class="form-control tipo-servicio" id="lugar">
+            <option value="Colombia">Colombia</option>
+            <option value="Chile">Chile</option>
+            <option value="México">México</option>
+            <option value="USA">USA</option>
+            <option value="Otro">Otro</option>
+          </select>
+
+          <!-- <small style="color: #c30000">
+            El Servicio es un campo requerido.
+          </small> -->
+        </div>
+        <div class="form-row pt-2 pb-2">
+          <label
+            class="size14 letter-spacing0-4 line-height17 text-gray-dark font-weight-500"
+            for="denuncia"
+            >Describa su caso o denuncia</label
+          >
+          <textarea class="form-control"></textarea>
+          <!-- <small style="color: #c30000"> Asunto es un campo requerido. </small> -->
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" />
+          <label class="form-check-label" for="acepto"
+            >He leído y acepto la
+            <strong>política de tratamiento de datos</strong></label
+          >
+          <!-- <small style="color: #c30000"> Debe aceptar las condiciones. </small> -->
+        </div>
+
+        <input
+          type="submit"
+          class="btn btn-primary btn-blue mt-4 w-40 mx-auto d-block"
+          name="enviar"
+          value="Enviar"
+        />
+      </form>
+    </div>
+  </div>
 </div>
